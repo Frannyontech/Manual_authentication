@@ -22,7 +22,13 @@
             <li><%=link_to 'My PicStories', stories_path %></li>
             <li><a href="#">'My Profile'</a></li>
             <li role="separator" class="divider"></li>
-            <li><a href="#">'Sign Out'</a></li>
+
+            <% if session[:user_id].present? %>
+              <li><a href="#">'Sign Out'</a></li>
+            <% else %>
+              <li><a href="#">'Sign In'</a></li>
+            <% end %>
+            
           </ul>
         </li>
       </ul>
