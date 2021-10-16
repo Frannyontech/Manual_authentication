@@ -1,9 +1,9 @@
 Rails.application.routes.draw do
   get 'sessions/new'
 
-  get 'sessions/create'
+  post 'sessions/create'
 
-  get 'sessions/destroy'
+  post 'sessions/destroy', as: 'session_destroy'
 
   resources :stories
   resources :users, only: [:new, :create, :show]
